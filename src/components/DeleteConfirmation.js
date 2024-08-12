@@ -6,7 +6,7 @@ import { ImCross } from 'react-icons/im';
 function DeleteConfirmation({ bannerId, setShowDeleteConfirmation, setBannerData }) {
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:4000/api/banner/delete/${bannerId}`, {
+      await axios.delete(`https://tuf-banner-backend.onrender.com/api/banner/delete/${bannerId}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }

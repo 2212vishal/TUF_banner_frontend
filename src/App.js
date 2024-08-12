@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     const fetchBannerData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/banner/get');
+        const response = await axios.get('https://tuf-banner-backend.onrender.com/api/banner/get');
         setBannerData(response.data);
         setBannerId(response.data.id); // Replace with actual banner ID
       } catch (error) {
@@ -38,7 +38,7 @@ function App() {
       // Start decreasing timer every second
       const intervalId = setInterval(async () => {
         try {
-          const response = await axios.put(`http://localhost:4000/api/banner/decrease-time/${bannerId}`);
+          const response = await axios.put(`https://tuf-banner-backend.onrender.com/api/banner/decrease-time/${bannerId}`);
           setBannerData(response.data.banner);
         } catch (error) {
           console.error('Error decreasing banner timer:', error);
@@ -55,7 +55,7 @@ function App() {
 
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:4000/api/auth/logout', {}, {
+      await axios.post('https://tuf-banner-backend.onrender.com/api/auth/logout', {}, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }

@@ -27,7 +27,7 @@ function Updateform({ bannerData, setShowUpdateForm, setBannerData }) {
     }
 
     try {
-      const response = await axios.put(`http://localhost:4000/api/banner/update/${bannerData.id}`, updateData, {
+      const response = await axios.put(`https://tuf-banner-backend.onrender.com/api/banner/update/${bannerData.id}`, updateData, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }

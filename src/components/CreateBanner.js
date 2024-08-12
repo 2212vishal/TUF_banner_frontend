@@ -27,7 +27,7 @@ function CreateBanner({ setShowCreateBanner, setBannerData }) {
     }
 
     try {
-      const response = await axios.post(`http://localhost:4000/api/banner/create`, newBannerData, {
+      const response = await axios.post(`https://tuf-banner-backend.onrender.com/api/banner/create`, newBannerData, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
